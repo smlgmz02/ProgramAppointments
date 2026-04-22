@@ -141,12 +141,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aplication\AuthService.cs" />
+    <Compile Include="aplication\SesionUsuario.cs" />
+    <Compile Include="Domain\Reunion.cs" />
+    <Compile Include="Domain\Usuario.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMenuInvestigador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuInvestigador.Designer.cs">
+      <DependentUpon>FrmMenuInvestigador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenuLider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuLider.Designer.cs">
+      <DependentUpon>FrmMenuLider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\MongoDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

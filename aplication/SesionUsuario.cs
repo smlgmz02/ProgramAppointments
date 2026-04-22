@@ -1,4 +1,4 @@
-﻿namespace GestionReuniones.Application
+﻿namespace ProgramAppointments.Application
 {
     public static class SesionUsuario
     {

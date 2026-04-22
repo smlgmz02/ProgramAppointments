@@ -1,13 +1,13 @@
 ﻿using MongoDB.Driver;
-using GestionReuniones.Domain;
+using ProgramAppointments.Domain;
 
-namespace GestionReuniones.Infrastructure
+namespace ProgramAppointments.Infrastructure
 {
     public class MongoDbContext
     {
         private readonly IMongoDatabase _database;
 
-        // Pasaremos la cadena de conexión al instanciar la clase
+     
         public MongoDbContext(string connectionString, string databaseName)
         {
             var client = new MongoClient(connectionString);
@@ -15,7 +15,7 @@ namespace GestionReuniones.Infrastructure
         }
 
         // Exponemos las colecciones listas para ser consultadas
-        public IMongoCollection<Usuario> Usuarios => _database.GetCollection<Usuario>("usuario");
-        public IMongoCollection<Reunion> Reuniones => _database.GetCollection<Reunion>("reunion");
+        public IMongoCollection<Usuario> Usuarios => _database.GetCollection<Usuario>("usuarios");
+        public IMongoCollection<Reunion> Reuniones => _database.GetCollection<Reunion>("reuniones");
     }
 }

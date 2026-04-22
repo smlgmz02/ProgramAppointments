@@ -1,9 +1,9 @@
 ﻿using MongoDB.Driver;
-using GestionReuniones.Domain;
-using GestionReuniones.Infrastructure;
+using ProgramAppointments.Domain;
+using ProgramAppointments.Infrastructure;
 using System.Threading.Tasks;
 
-namespace GestionReuniones.Application
+namespace ProgramAppointments.Application
 {
     public class AuthService
     {
