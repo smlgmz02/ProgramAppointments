@@ -65,7 +65,7 @@ namespace ProgramAppointments
 
         private void AbrirMenuSegunRol(string rol)
         {
-            this.Hide();
+           
 
             if (rol == "Lider")
             {
@@ -85,7 +85,7 @@ namespace ProgramAppointments
 
             }
 
-             this.Close(); 
+        
         }
     }
 }

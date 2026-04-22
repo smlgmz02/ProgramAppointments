@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace ProgramAppointments
 {
-    public partial class FrmMenuLider : Form
+    public partial class FrmAgregarReuLider : Form
     {
-        public FrmMenuLider()
+        public FrmAgregarReuLider()
         {
             InitializeComponent();
-        }
-
-        private void btnAgendar_Click(object sender, EventArgs e)
-        {
-            FrmCrearReuLider frmCrearReuLider = new FrmCrearReuLider();
-            frmCrearReuLider.Show();
         }
     }
 }

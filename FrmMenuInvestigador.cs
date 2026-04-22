@@ -16,5 +16,17 @@ namespace ProgramAppointments
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmCrearReuLider frmCrearReuLider = new FrmCrearReuLider();
+            frmCrearReuLider.Show();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
