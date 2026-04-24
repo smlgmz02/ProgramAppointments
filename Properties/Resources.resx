@@ -121,4 +121,16 @@
   <data name="Gemini_Generated_Image_g0vvtxg0vvtxg0vv-Photoroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gemini_Generated_Image_g0vvtxg0vvtxg0vv-Photoroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MEETLYFONDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MEETLYFONDO.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura de pantalla 2026-04-24 124234" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de pantalla 2026-04-24 124234.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_Meetly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_Meetly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

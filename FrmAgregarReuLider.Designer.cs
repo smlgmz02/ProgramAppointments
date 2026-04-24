@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagrid_reuniones = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtMes = new System.Windows.Forms.TextBox();
+            this.txtDia = new System.Windows.Forms.TextBox();
+            this.txtHoraInicio = new System.Windows.Forms.TextBox();
+            this.txtHoraFinal = new System.Windows.Forms.TextBox();
+            this.combo_investigadores = new System.Windows.Forms.ComboBox();
+            this.btn_agg_inv = new System.Windows.Forms.Button();
+            this.btn_agendar_reu = new System.Windows.Forms.Button();
             this.lblDia = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_reuniones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // datagrid_reuniones
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(462, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(335, 213);
-            this.dataGridView1.TabIndex = 0;
+            this.datagrid_reuniones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_reuniones.Location = new System.Drawing.Point(462, 91);
+            this.datagrid_reuniones.Name = "datagrid_reuniones";
+            this.datagrid_reuniones.Size = new System.Drawing.Size(335, 213);
+            this.datagrid_reuniones.TabIndex = 0;
+            this.datagrid_reuniones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_reuniones_CellContentClick);
             // 
             // label1
             // 
@@ -62,59 +65,66 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Reuniones agendadas para este dia";
             // 
-            // textBox1
+            // txtMes
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtMes.Location = new System.Drawing.Point(57, 96);
+            this.txtMes.Name = "txtMes";
+            this.txtMes.Size = new System.Drawing.Size(137, 20);
+            this.txtMes.TabIndex = 2;
+            this.txtMes.TextChanged += new System.EventHandler(this.txtMes_TextChanged);
             // 
-            // textBox2
+            // txtDia
             // 
-            this.textBox2.Location = new System.Drawing.Point(57, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtDia.Location = new System.Drawing.Point(57, 162);
+            this.txtDia.Name = "txtDia";
+            this.txtDia.Size = new System.Drawing.Size(137, 20);
+            this.txtDia.TabIndex = 3;
+            this.txtDia.TextChanged += new System.EventHandler(this.txtDia_TextChanged);
             // 
-            // textBox3
+            // txtHoraInicio
             // 
-            this.textBox3.Location = new System.Drawing.Point(57, 229);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 20);
-            this.textBox3.TabIndex = 4;
+            this.txtHoraInicio.Location = new System.Drawing.Point(57, 229);
+            this.txtHoraInicio.Name = "txtHoraInicio";
+            this.txtHoraInicio.Size = new System.Drawing.Size(137, 20);
+            this.txtHoraInicio.TabIndex = 4;
+            this.txtHoraInicio.TextChanged += new System.EventHandler(this.txtHoraInicio_TextChanged);
             // 
-            // textBox4
+            // txtHoraFinal
             // 
-            this.textBox4.Location = new System.Drawing.Point(57, 305);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(137, 20);
-            this.textBox4.TabIndex = 5;
+            this.txtHoraFinal.Location = new System.Drawing.Point(57, 305);
+            this.txtHoraFinal.Name = "txtHoraFinal";
+            this.txtHoraFinal.Size = new System.Drawing.Size(137, 20);
+            this.txtHoraFinal.TabIndex = 5;
+            this.txtHoraFinal.TextChanged += new System.EventHandler(this.txtHoraFinal_TextChanged);
             // 
-            // comboBox1
+            // combo_investigadores
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(462, 329);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 21);
-            this.comboBox1.TabIndex = 6;
+            this.combo_investigadores.FormattingEnabled = true;
+            this.combo_investigadores.Location = new System.Drawing.Point(462, 329);
+            this.combo_investigadores.Name = "combo_investigadores";
+            this.combo_investigadores.Size = new System.Drawing.Size(220, 21);
+            this.combo_investigadores.TabIndex = 6;
+            this.combo_investigadores.SelectedIndexChanged += new System.EventHandler(this.combo_investigadores_SelectedIndexChanged);
             // 
-            // button1
+            // btn_agg_inv
             // 
-            this.button1.Location = new System.Drawing.Point(462, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Agregar investigador";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_agg_inv.Location = new System.Drawing.Point(462, 384);
+            this.btn_agg_inv.Name = "btn_agg_inv";
+            this.btn_agg_inv.Size = new System.Drawing.Size(129, 23);
+            this.btn_agg_inv.TabIndex = 7;
+            this.btn_agg_inv.Text = "Agregar investigador";
+            this.btn_agg_inv.UseVisualStyleBackColor = true;
+            this.btn_agg_inv.Click += new System.EventHandler(this.btn_agg_inv_Click);
             // 
-            // button2
+            // btn_agendar_reu
             // 
-            this.button2.Location = new System.Drawing.Point(260, 440);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 53);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Agendar Reunion";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_agendar_reu.Location = new System.Drawing.Point(260, 440);
+            this.btn_agendar_reu.Name = "btn_agendar_reu";
+            this.btn_agendar_reu.Size = new System.Drawing.Size(124, 53);
+            this.btn_agendar_reu.TabIndex = 8;
+            this.btn_agendar_reu.Text = "Agendar Reunion";
+            this.btn_agendar_reu.UseVisualStyleBackColor = true;
+            this.btn_agendar_reu.Click += new System.EventHandler(this.btn_agendar_reu_Click);
             // 
             // lblDia
             // 
@@ -152,27 +162,43 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Hora Final";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProgramAppointments.Properties.Resources.Captura_de_pantalla_2026_04_24_124234;
+            this.pictureBox1.Location = new System.Drawing.Point(859, 495);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmAgregarReuLider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(918, 554);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblDia);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_agendar_reu);
+            this.Controls.Add(this.btn_agg_inv);
+            this.Controls.Add(this.combo_investigadores);
+            this.Controls.Add(this.txtHoraFinal);
+            this.Controls.Add(this.txtHoraInicio);
+            this.Controls.Add(this.txtDia);
+            this.Controls.Add(this.txtMes);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datagrid_reuniones);
             this.Name = "FrmAgregarReuLider";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAgregarReuLider";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmAgregarReuLider_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_reuniones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,18 +206,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagrid_reuniones;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtMes;
+        private System.Windows.Forms.TextBox txtDia;
+        private System.Windows.Forms.TextBox txtHoraInicio;
+        private System.Windows.Forms.TextBox txtHoraFinal;
+        private System.Windows.Forms.ComboBox combo_investigadores;
+        private System.Windows.Forms.Button btn_agg_inv;
+        private System.Windows.Forms.Button btn_agendar_reu;
         private System.Windows.Forms.Label lblDia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

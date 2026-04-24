@@ -44,23 +44,6 @@ namespace ProgramAppointments
             }
         }
 
-        private async void  btn_iniciar_Click(object sender, EventArgs e)
-        {
-            string email = txtEmail.Text;
-            string pass = txtPassword.Text;
-
-            var usuario = await _authService.LoginAsync(email, pass);
-
-            if (usuario != null)
-            {
-                SesionUsuario.UsuarioLogueado = usuario;
-                AbrirMenuSegunRol(usuario.Rol);
-            }
-            else
-            {
-                MessageBox.Show("Credenciales incorrectas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
         private void AbrirMenuSegunRol(string rol)
@@ -86,6 +69,30 @@ namespace ProgramAppointments
             }
 
         
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private async void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+            string pass = txtPassword.Text;
+
+            var usuario = await _authService.LoginAsync(email, pass);
+
+            if (usuario != null)
+            {
+                SesionUsuario.UsuarioLogueado = usuario;
+                AbrirMenuSegunRol(usuario.Rol);
+            }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
