@@ -33,12 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_seleccionar_dia = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // calendar_picker
             // 
-            this.calendar_picker.Location = new System.Drawing.Point(43, 148);
+            this.calendar_picker.Location = new System.Drawing.Point(72, 144);
             this.calendar_picker.Name = "calendar_picker";
             this.calendar_picker.TabIndex = 1;
             this.calendar_picker.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
@@ -47,7 +48,7 @@
             // 
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_welcome.Location = new System.Drawing.Point(24, 33);
+            this.lbl_welcome.Location = new System.Drawing.Point(67, 34);
             this.lbl_welcome.Name = "lbl_welcome";
             this.lbl_welcome.Size = new System.Drawing.Size(303, 28);
             this.lbl_welcome.TabIndex = 2;
@@ -58,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 92);
+            this.label2.Location = new System.Drawing.Point(68, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 21);
             this.label2.TabIndex = 3;
@@ -67,7 +68,7 @@
             // btn_seleccionar_dia
             // 
             this.btn_seleccionar_dia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_seleccionar_dia.Location = new System.Drawing.Point(335, 360);
+            this.btn_seleccionar_dia.Location = new System.Drawing.Point(368, 355);
             this.btn_seleccionar_dia.Name = "btn_seleccionar_dia";
             this.btn_seleccionar_dia.Size = new System.Drawing.Size(133, 46);
             this.btn_seleccionar_dia.TabIndex = 4;
@@ -85,6 +86,17 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Image = global::ProgramAppointments.Properties.Resources.flecha_izquierda;
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(46, 23);
+            this.button1.TabIndex = 6;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmCrearReuLider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +104,7 @@
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_seleccionar_dia);
             this.Controls.Add(this.label2);
@@ -113,5 +126,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_seleccionar_dia;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

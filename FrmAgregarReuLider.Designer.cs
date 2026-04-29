@@ -42,6 +42,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtnombrereu = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtmotivoreu = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_reuniones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,17 +54,17 @@
             // datagrid_reuniones
             // 
             this.datagrid_reuniones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_reuniones.Location = new System.Drawing.Point(462, 91);
+            this.datagrid_reuniones.Location = new System.Drawing.Point(250, 37);
             this.datagrid_reuniones.Name = "datagrid_reuniones";
-            this.datagrid_reuniones.Size = new System.Drawing.Size(335, 213);
+            this.datagrid_reuniones.Size = new System.Drawing.Size(410, 213);
             this.datagrid_reuniones.TabIndex = 0;
-            this.datagrid_reuniones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_reuniones_CellContentClick);
+            this.datagrid_reuniones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_reuniones_CellDoubleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 52);
+            this.label1.Location = new System.Drawing.Point(324, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(224, 19);
             this.label1.TabIndex = 1;
@@ -67,48 +72,43 @@
             // 
             // txtMes
             // 
-            this.txtMes.Location = new System.Drawing.Point(57, 96);
+            this.txtMes.Location = new System.Drawing.Point(183, 292);
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(137, 20);
             this.txtMes.TabIndex = 2;
-            this.txtMes.TextChanged += new System.EventHandler(this.txtMes_TextChanged);
             // 
             // txtDia
             // 
-            this.txtDia.Location = new System.Drawing.Point(57, 162);
+            this.txtDia.Location = new System.Drawing.Point(183, 358);
             this.txtDia.Name = "txtDia";
             this.txtDia.Size = new System.Drawing.Size(137, 20);
             this.txtDia.TabIndex = 3;
-            this.txtDia.TextChanged += new System.EventHandler(this.txtDia_TextChanged);
             // 
             // txtHoraInicio
             // 
-            this.txtHoraInicio.Location = new System.Drawing.Point(57, 229);
+            this.txtHoraInicio.Location = new System.Drawing.Point(183, 425);
             this.txtHoraInicio.Name = "txtHoraInicio";
             this.txtHoraInicio.Size = new System.Drawing.Size(137, 20);
             this.txtHoraInicio.TabIndex = 4;
-            this.txtHoraInicio.TextChanged += new System.EventHandler(this.txtHoraInicio_TextChanged);
             // 
             // txtHoraFinal
             // 
-            this.txtHoraFinal.Location = new System.Drawing.Point(57, 305);
+            this.txtHoraFinal.Location = new System.Drawing.Point(373, 425);
             this.txtHoraFinal.Name = "txtHoraFinal";
             this.txtHoraFinal.Size = new System.Drawing.Size(137, 20);
             this.txtHoraFinal.TabIndex = 5;
-            this.txtHoraFinal.TextChanged += new System.EventHandler(this.txtHoraFinal_TextChanged);
             // 
             // combo_investigadores
             // 
             this.combo_investigadores.FormattingEnabled = true;
-            this.combo_investigadores.Location = new System.Drawing.Point(462, 329);
+            this.combo_investigadores.Location = new System.Drawing.Point(561, 291);
             this.combo_investigadores.Name = "combo_investigadores";
             this.combo_investigadores.Size = new System.Drawing.Size(220, 21);
             this.combo_investigadores.TabIndex = 6;
-            this.combo_investigadores.SelectedIndexChanged += new System.EventHandler(this.combo_investigadores_SelectedIndexChanged);
             // 
             // btn_agg_inv
             // 
-            this.btn_agg_inv.Location = new System.Drawing.Point(462, 384);
+            this.btn_agg_inv.Location = new System.Drawing.Point(561, 346);
             this.btn_agg_inv.Name = "btn_agg_inv";
             this.btn_agg_inv.Size = new System.Drawing.Size(129, 23);
             this.btn_agg_inv.TabIndex = 7;
@@ -118,7 +118,7 @@
             // 
             // btn_agendar_reu
             // 
-            this.btn_agendar_reu.Location = new System.Drawing.Point(260, 440);
+            this.btn_agendar_reu.Location = new System.Drawing.Point(374, 475);
             this.btn_agendar_reu.Name = "btn_agendar_reu";
             this.btn_agendar_reu.Size = new System.Drawing.Size(124, 53);
             this.btn_agendar_reu.TabIndex = 8;
@@ -129,7 +129,7 @@
             // lblDia
             // 
             this.lblDia.AutoSize = true;
-            this.lblDia.Location = new System.Drawing.Point(54, 135);
+            this.lblDia.Location = new System.Drawing.Point(180, 331);
             this.lblDia.Name = "lblDia";
             this.lblDia.Size = new System.Drawing.Size(23, 13);
             this.lblDia.TabIndex = 9;
@@ -138,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 80);
+            this.label2.Location = new System.Drawing.Point(180, 276);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 10;
@@ -147,7 +147,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 198);
+            this.label3.Location = new System.Drawing.Point(180, 394);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 11;
@@ -156,7 +156,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 268);
+            this.label4.Location = new System.Drawing.Point(370, 394);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 12;
@@ -172,6 +172,49 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // txtnombrereu
+            // 
+            this.txtnombrereu.Location = new System.Drawing.Point(373, 292);
+            this.txtnombrereu.Name = "txtnombrereu";
+            this.txtnombrereu.Size = new System.Drawing.Size(137, 20);
+            this.txtnombrereu.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(370, 276);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Nombre de la reunion";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(370, 342);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Motivo";
+            // 
+            // txtmotivoreu
+            // 
+            this.txtmotivoreu.Location = new System.Drawing.Point(373, 358);
+            this.txtmotivoreu.Name = "txtmotivoreu";
+            this.txtmotivoreu.Size = new System.Drawing.Size(137, 20);
+            this.txtmotivoreu.TabIndex = 17;
+            // 
+            // button2
+            // 
+            this.button2.Image = global::ProgramAppointments.Properties.Resources.flecha_izquierda;
+            this.button2.Location = new System.Drawing.Point(22, 38);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(32, 33);
+            this.button2.TabIndex = 19;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FrmAgregarReuLider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +222,11 @@
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(918, 554);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtmotivoreu);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtnombrereu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -220,5 +268,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtnombrereu;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtmotivoreu;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -238,5 +238,8 @@
   <ItemGroup>
     <None Include="Resources\logo_Meetly.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-izquierda.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

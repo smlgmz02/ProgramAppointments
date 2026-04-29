@@ -91,8 +91,12 @@ namespace ProgramAppointments
             await MarcarDiasOcupados(); 
         }
 
-
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenuLider menuLider = new FrmMenuLider();
+            menuLider.Show();
+             this.Hide();   
+        }
     }
 
 
