@@ -47,14 +47,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtmotivoreu = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_reuniones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // datagrid_reuniones
             // 
+            this.datagrid_reuniones.BackgroundColor = System.Drawing.Color.White;
             this.datagrid_reuniones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_reuniones.Location = new System.Drawing.Point(250, 37);
+            this.datagrid_reuniones.Location = new System.Drawing.Point(255, 57);
             this.datagrid_reuniones.Name = "datagrid_reuniones";
             this.datagrid_reuniones.Size = new System.Drawing.Size(410, 213);
             this.datagrid_reuniones.TabIndex = 0;
@@ -63,37 +65,38 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(324, 15);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(279, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 19);
+            this.label1.Size = new System.Drawing.Size(355, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Reuniones agendadas para este dia";
             // 
             // txtMes
             // 
-            this.txtMes.Location = new System.Drawing.Point(183, 292);
+            this.txtMes.Location = new System.Drawing.Point(199, 307);
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(137, 20);
             this.txtMes.TabIndex = 2;
             // 
             // txtDia
             // 
-            this.txtDia.Location = new System.Drawing.Point(183, 358);
+            this.txtDia.Location = new System.Drawing.Point(199, 373);
             this.txtDia.Name = "txtDia";
             this.txtDia.Size = new System.Drawing.Size(137, 20);
             this.txtDia.TabIndex = 3;
             // 
             // txtHoraInicio
             // 
-            this.txtHoraInicio.Location = new System.Drawing.Point(183, 425);
+            this.txtHoraInicio.Location = new System.Drawing.Point(199, 440);
             this.txtHoraInicio.Name = "txtHoraInicio";
             this.txtHoraInicio.Size = new System.Drawing.Size(137, 20);
             this.txtHoraInicio.TabIndex = 4;
             // 
             // txtHoraFinal
             // 
-            this.txtHoraFinal.Location = new System.Drawing.Point(373, 425);
+            this.txtHoraFinal.Location = new System.Drawing.Point(389, 440);
             this.txtHoraFinal.Name = "txtHoraFinal";
             this.txtHoraFinal.Size = new System.Drawing.Size(137, 20);
             this.txtHoraFinal.TabIndex = 5;
@@ -101,16 +104,17 @@
             // combo_investigadores
             // 
             this.combo_investigadores.FormattingEnabled = true;
-            this.combo_investigadores.Location = new System.Drawing.Point(561, 291);
+            this.combo_investigadores.Location = new System.Drawing.Point(577, 307);
             this.combo_investigadores.Name = "combo_investigadores";
-            this.combo_investigadores.Size = new System.Drawing.Size(220, 21);
+            this.combo_investigadores.Size = new System.Drawing.Size(150, 21);
             this.combo_investigadores.TabIndex = 6;
             // 
             // btn_agg_inv
             // 
-            this.btn_agg_inv.Location = new System.Drawing.Point(561, 346);
+            this.btn_agg_inv.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_agg_inv.Location = new System.Drawing.Point(577, 362);
             this.btn_agg_inv.Name = "btn_agg_inv";
-            this.btn_agg_inv.Size = new System.Drawing.Size(129, 23);
+            this.btn_agg_inv.Size = new System.Drawing.Size(150, 44);
             this.btn_agg_inv.TabIndex = 7;
             this.btn_agg_inv.Text = "Agregar investigador";
             this.btn_agg_inv.UseVisualStyleBackColor = true;
@@ -118,9 +122,10 @@
             // 
             // btn_agendar_reu
             // 
-            this.btn_agendar_reu.Location = new System.Drawing.Point(374, 475);
+            this.btn_agendar_reu.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_agendar_reu.Location = new System.Drawing.Point(577, 427);
             this.btn_agendar_reu.Name = "btn_agendar_reu";
-            this.btn_agendar_reu.Size = new System.Drawing.Size(124, 53);
+            this.btn_agendar_reu.Size = new System.Drawing.Size(150, 42);
             this.btn_agendar_reu.TabIndex = 8;
             this.btn_agendar_reu.Text = "Agendar Reunion";
             this.btn_agendar_reu.UseVisualStyleBackColor = true;
@@ -129,36 +134,44 @@
             // lblDia
             // 
             this.lblDia.AutoSize = true;
-            this.lblDia.Location = new System.Drawing.Point(180, 331);
+            this.lblDia.BackColor = System.Drawing.Color.Transparent;
+            this.lblDia.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDia.Location = new System.Drawing.Point(199, 353);
             this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(23, 13);
+            this.lblDia.Size = new System.Drawing.Size(29, 17);
             this.lblDia.TabIndex = 9;
             this.lblDia.Text = "Dia";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(180, 276);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(199, 287);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 13);
+            this.label2.Size = new System.Drawing.Size(33, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Mes";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(180, 394);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(199, 420);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Hora inicio";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(370, 394);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(390, 420);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 12;
             this.label4.Text = "Hora Final";
             // 
@@ -174,7 +187,7 @@
             // 
             // txtnombrereu
             // 
-            this.txtnombrereu.Location = new System.Drawing.Point(373, 292);
+            this.txtnombrereu.Location = new System.Drawing.Point(389, 307);
             this.txtnombrereu.Name = "txtnombrereu";
             this.txtnombrereu.Size = new System.Drawing.Size(137, 20);
             this.txtnombrereu.TabIndex = 14;
@@ -182,38 +195,58 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(370, 276);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(386, 286);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.Size = new System.Drawing.Size(144, 17);
             this.label5.TabIndex = 15;
             this.label5.Text = "Nombre de la reunion";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(370, 342);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(391, 353);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "Motivo";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtmotivoreu
             // 
-            this.txtmotivoreu.Location = new System.Drawing.Point(373, 358);
+            this.txtmotivoreu.Location = new System.Drawing.Point(389, 373);
             this.txtmotivoreu.Name = "txtmotivoreu";
             this.txtmotivoreu.Size = new System.Drawing.Size(137, 20);
             this.txtmotivoreu.TabIndex = 17;
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Image = global::ProgramAppointments.Properties.Resources.flecha_izquierda;
-            this.button2.Location = new System.Drawing.Point(22, 38);
+            this.button2.Location = new System.Drawing.Point(21, 24);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 33);
             this.button2.TabIndex = 19;
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(579, 287);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 17);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Investigador";
             // 
             // FrmAgregarReuLider
             // 
@@ -222,6 +255,7 @@
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(918, 554);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtmotivoreu);
             this.Controls.Add(this.label6);
@@ -273,5 +307,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtmotivoreu;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
     }
 }
