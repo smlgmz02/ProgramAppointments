@@ -21,6 +21,12 @@ namespace ProgramAppointments
         {
             FrmCrearReuLider frmCrearReuLider = new FrmCrearReuLider();
             frmCrearReuLider.Show();
+            this.Hide();
+        }
+
+        private void BtnConsultar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

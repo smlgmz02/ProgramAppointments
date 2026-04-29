@@ -34,9 +34,11 @@
             // 
             // btnAgendar
             // 
-            this.btnAgendar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAgendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendar.Location = new System.Drawing.Point(211, 151);
+            this.btnAgendar.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnAgendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgendar.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgendar.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnAgendar.Location = new System.Drawing.Point(224, 151);
             this.btnAgendar.Name = "btnAgendar";
             this.btnAgendar.Size = new System.Drawing.Size(203, 191);
             this.btnAgendar.TabIndex = 1;
@@ -46,9 +48,11 @@
             // 
             // BtnConsultar
             // 
-            this.BtnConsultar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConsultar.Location = new System.Drawing.Point(498, 151);
+            this.BtnConsultar.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.BtnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsultar.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsultar.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnConsultar.Location = new System.Drawing.Point(528, 151);
             this.BtnConsultar.Name = "BtnConsultar";
             this.BtnConsultar.Size = new System.Drawing.Size(203, 191);
             this.BtnConsultar.TabIndex = 2;
@@ -60,6 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
             this.ClientSize = new System.Drawing.Size(889, 501);
             this.Controls.Add(this.BtnConsultar);
             this.Controls.Add(this.btnAgendar);

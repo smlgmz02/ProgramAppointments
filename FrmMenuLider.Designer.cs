@@ -44,6 +44,7 @@
             this.BtnConsultar.TabIndex = 4;
             this.BtnConsultar.Text = "CONSULTAR REUNIONES";
             this.BtnConsultar.UseVisualStyleBackColor = false;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
             // btnAgendar
             // 
