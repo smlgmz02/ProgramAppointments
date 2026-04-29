@@ -30,8 +30,8 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -71,6 +71,16 @@
             this.guna2Panel1.Size = new System.Drawing.Size(376, 433);
             this.guna2Panel1.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(111, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(169, 53);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "MEETLY";
+            // 
             // guna2Button1
             // 
             this.guna2Button1.Animated = true;
@@ -88,16 +98,6 @@
             this.guna2Button1.TabIndex = 11;
             this.guna2Button1.Text = "INGRESAR";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(111, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 53);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "MEETLY";
             // 
             // pictureBox3
             // 
