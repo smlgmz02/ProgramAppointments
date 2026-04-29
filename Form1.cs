@@ -20,7 +20,7 @@ namespace ProgramAppointments
         public Form1()
         {
             InitializeComponent();
-
+            // comentario feat de prueba
             // Inicializamos la conexión (Paso temporal, luego se puede inyectar)
             var context = new MongoDbContext("mongodb://localhost:27017", "REUNION");
             _authService = new AuthService(context);
