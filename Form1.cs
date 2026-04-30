@@ -55,7 +55,8 @@ namespace ProgramAppointments
 
                 FrmMenuLider menuLider = new FrmMenuLider();
                  menuLider.Show();
-       
+                this.Hide(); 
+
 
             }
             else if (rol == "Investigador")
@@ -63,8 +64,9 @@ namespace ProgramAppointments
 
                 FrmMenuInvestigador menuInv = new FrmMenuInvestigador();
                  menuInv.Show();
-           
-             
+                this.Hide(); 
+
+
 
             }
 

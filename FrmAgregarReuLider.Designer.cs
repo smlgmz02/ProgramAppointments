@@ -56,9 +56,11 @@
             // 
             this.datagrid_reuniones.BackgroundColor = System.Drawing.Color.White;
             this.datagrid_reuniones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_reuniones.Location = new System.Drawing.Point(447, 85);
+            this.datagrid_reuniones.Location = new System.Drawing.Point(596, 105);
+            this.datagrid_reuniones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datagrid_reuniones.Name = "datagrid_reuniones";
-            this.datagrid_reuniones.Size = new System.Drawing.Size(410, 213);
+            this.datagrid_reuniones.RowHeadersWidth = 51;
+            this.datagrid_reuniones.Size = new System.Drawing.Size(547, 262);
             this.datagrid_reuniones.TabIndex = 0;
             this.datagrid_reuniones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_reuniones_CellContentClick_1);
             this.datagrid_reuniones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_reuniones_CellDoubleClick);
@@ -68,55 +70,62 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(465, 44);
+            this.label1.Location = new System.Drawing.Point(620, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 28);
+            this.label1.Size = new System.Drawing.Size(465, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "Reuniones agendadas para este dia";
             // 
             // txtMes
             // 
-            this.txtMes.Location = new System.Drawing.Point(30, 100);
+            this.txtMes.Location = new System.Drawing.Point(40, 123);
+            this.txtMes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMes.Name = "txtMes";
-            this.txtMes.Size = new System.Drawing.Size(137, 20);
+            this.txtMes.Size = new System.Drawing.Size(181, 22);
             this.txtMes.TabIndex = 2;
             // 
             // txtDia
             // 
-            this.txtDia.Location = new System.Drawing.Point(30, 166);
+            this.txtDia.Location = new System.Drawing.Point(40, 204);
+            this.txtDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(137, 20);
+            this.txtDia.Size = new System.Drawing.Size(181, 22);
             this.txtDia.TabIndex = 3;
             // 
             // txtHoraInicio
             // 
-            this.txtHoraInicio.Location = new System.Drawing.Point(30, 233);
+            this.txtHoraInicio.Location = new System.Drawing.Point(40, 287);
+            this.txtHoraInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHoraInicio.Name = "txtHoraInicio";
-            this.txtHoraInicio.Size = new System.Drawing.Size(137, 20);
+            this.txtHoraInicio.Size = new System.Drawing.Size(181, 22);
             this.txtHoraInicio.TabIndex = 4;
             // 
             // txtHoraFinal
             // 
-            this.txtHoraFinal.Location = new System.Drawing.Point(220, 233);
+            this.txtHoraFinal.Location = new System.Drawing.Point(293, 287);
+            this.txtHoraFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHoraFinal.Name = "txtHoraFinal";
-            this.txtHoraFinal.Size = new System.Drawing.Size(137, 20);
+            this.txtHoraFinal.Size = new System.Drawing.Size(181, 22);
             this.txtHoraFinal.TabIndex = 5;
             // 
             // combo_investigadores
             // 
             this.combo_investigadores.FormattingEnabled = true;
-            this.combo_investigadores.Location = new System.Drawing.Point(30, 301);
+            this.combo_investigadores.Location = new System.Drawing.Point(40, 370);
+            this.combo_investigadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.combo_investigadores.Name = "combo_investigadores";
-            this.combo_investigadores.Size = new System.Drawing.Size(327, 21);
+            this.combo_investigadores.Size = new System.Drawing.Size(435, 24);
             this.combo_investigadores.TabIndex = 6;
             // 
             // btn_agg_inv
             // 
             this.btn_agg_inv.BackColor = System.Drawing.Color.White;
             this.btn_agg_inv.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agg_inv.Location = new System.Drawing.Point(30, 350);
+            this.btn_agg_inv.Location = new System.Drawing.Point(40, 431);
+            this.btn_agg_inv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_agg_inv.Name = "btn_agg_inv";
-            this.btn_agg_inv.Size = new System.Drawing.Size(327, 31);
+            this.btn_agg_inv.Size = new System.Drawing.Size(436, 38);
             this.btn_agg_inv.TabIndex = 7;
             this.btn_agg_inv.Text = "Agregar Investigador";
             this.btn_agg_inv.UseVisualStyleBackColor = false;
@@ -128,9 +137,10 @@
             this.btn_agendar_reu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_agendar_reu.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agendar_reu.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_agendar_reu.Location = new System.Drawing.Point(585, 323);
+            this.btn_agendar_reu.Location = new System.Drawing.Point(780, 398);
+            this.btn_agendar_reu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_agendar_reu.Name = "btn_agendar_reu";
-            this.btn_agendar_reu.Size = new System.Drawing.Size(150, 42);
+            this.btn_agendar_reu.Size = new System.Drawing.Size(200, 52);
             this.btn_agendar_reu.TabIndex = 8;
             this.btn_agendar_reu.Text = "Agendar Reunion";
             this.btn_agendar_reu.UseVisualStyleBackColor = false;
@@ -141,9 +151,10 @@
             this.lblDia.AutoSize = true;
             this.lblDia.BackColor = System.Drawing.Color.Transparent;
             this.lblDia.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDia.Location = new System.Drawing.Point(30, 146);
+            this.lblDia.Location = new System.Drawing.Point(40, 180);
+            this.lblDia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(29, 17);
+            this.lblDia.Size = new System.Drawing.Size(37, 22);
             this.lblDia.TabIndex = 9;
             this.lblDia.Text = "Dia";
             // 
@@ -152,9 +163,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 80);
+            this.label2.Location = new System.Drawing.Point(40, 98);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 17);
+            this.label2.Size = new System.Drawing.Size(42, 22);
             this.label2.TabIndex = 10;
             this.label2.Text = "Mes";
             // 
@@ -163,9 +175,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 213);
+            this.label3.Location = new System.Drawing.Point(40, 262);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 17);
+            this.label3.Size = new System.Drawing.Size(97, 22);
             this.label3.TabIndex = 11;
             this.label3.Text = "Hora inicio";
             // 
@@ -174,27 +187,30 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(221, 213);
+            this.label4.Location = new System.Drawing.Point(295, 262);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.Size = new System.Drawing.Size(92, 22);
             this.label4.TabIndex = 12;
             this.label4.Text = "Hora Final";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProgramAppointments.Properties.Resources.Captura_de_pantalla_2026_04_24_124234;
-            this.pictureBox1.Location = new System.Drawing.Point(863, 388);
+            this.pictureBox1.Location = new System.Drawing.Point(1151, 478);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 55);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
             // txtnombrereu
             // 
-            this.txtnombrereu.Location = new System.Drawing.Point(220, 100);
+            this.txtnombrereu.Location = new System.Drawing.Point(293, 123);
+            this.txtnombrereu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtnombrereu.Name = "txtnombrereu";
-            this.txtnombrereu.Size = new System.Drawing.Size(137, 20);
+            this.txtnombrereu.Size = new System.Drawing.Size(181, 22);
             this.txtnombrereu.TabIndex = 14;
             // 
             // label5
@@ -202,9 +218,10 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(217, 79);
+            this.label5.Location = new System.Drawing.Point(289, 97);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 17);
+            this.label5.Size = new System.Drawing.Size(186, 22);
             this.label5.TabIndex = 15;
             this.label5.Text = "Nombre de la reunion";
             // 
@@ -213,18 +230,20 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(222, 146);
+            this.label6.Location = new System.Drawing.Point(296, 180);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.Size = new System.Drawing.Size(67, 22);
             this.label6.TabIndex = 16;
             this.label6.Text = "Motivo";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtmotivoreu
             // 
-            this.txtmotivoreu.Location = new System.Drawing.Point(220, 166);
+            this.txtmotivoreu.Location = new System.Drawing.Point(293, 204);
+            this.txtmotivoreu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtmotivoreu.Name = "txtmotivoreu";
-            this.txtmotivoreu.Size = new System.Drawing.Size(137, 20);
+            this.txtmotivoreu.Size = new System.Drawing.Size(181, 22);
             this.txtmotivoreu.TabIndex = 17;
             // 
             // button2
@@ -234,9 +253,10 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::ProgramAppointments.Properties.Resources.flecha_izquierda;
-            this.button2.Location = new System.Drawing.Point(33, 12);
+            this.button2.Location = new System.Drawing.Point(44, 15);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 33);
+            this.button2.Size = new System.Drawing.Size(43, 41);
             this.button2.TabIndex = 19;
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
@@ -247,19 +267,20 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 281);
+            this.label7.Location = new System.Drawing.Point(47, 346);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 17);
+            this.label7.Size = new System.Drawing.Size(110, 22);
             this.label7.TabIndex = 20;
             this.label7.Text = "Investigador";
             // 
             // FrmAgregarReuLider
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(918, 442);
+            this.ClientSize = new System.Drawing.Size(1224, 544);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtmotivoreu);
@@ -280,6 +301,7 @@
             this.Controls.Add(this.txtMes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.datagrid_reuniones);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmAgregarReuLider";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAgregarReuLider";
