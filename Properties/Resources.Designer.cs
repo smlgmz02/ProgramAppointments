@@ -103,6 +103,16 @@ namespace ProgramAppointments.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logomeetly {
+            get {
+                object obj = ResourceManager.GetObject("logomeetly", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MEETLYFONDO {
             get {
                 object obj = ResourceManager.GetObject("MEETLYFONDO", resourceCulture);

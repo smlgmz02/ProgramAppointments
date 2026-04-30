@@ -38,9 +38,10 @@
             this.btnAgendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgendar.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgendar.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnAgendar.Location = new System.Drawing.Point(224, 151);
+            this.btnAgendar.Location = new System.Drawing.Point(299, 186);
+            this.btnAgendar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgendar.Name = "btnAgendar";
-            this.btnAgendar.Size = new System.Drawing.Size(203, 191);
+            this.btnAgendar.Size = new System.Drawing.Size(271, 235);
             this.btnAgendar.TabIndex = 1;
             this.btnAgendar.Text = "AGENDAR REUNIONES";
             this.btnAgendar.UseVisualStyleBackColor = false;
@@ -52,9 +53,10 @@
             this.BtnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConsultar.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsultar.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.BtnConsultar.Location = new System.Drawing.Point(528, 151);
+            this.BtnConsultar.Location = new System.Drawing.Point(704, 186);
+            this.BtnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnConsultar.Name = "BtnConsultar";
-            this.BtnConsultar.Size = new System.Drawing.Size(203, 191);
+            this.BtnConsultar.Size = new System.Drawing.Size(271, 235);
             this.BtnConsultar.TabIndex = 2;
             this.BtnConsultar.Text = "CONSULTAR REUNIONES";
             this.BtnConsultar.UseVisualStyleBackColor = false;
@@ -62,13 +64,15 @@
             // 
             // FrmMenuInvestigador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
-            this.ClientSize = new System.Drawing.Size(889, 501);
+            this.ClientSize = new System.Drawing.Size(1185, 617);
             this.Controls.Add(this.BtnConsultar);
             this.Controls.Add(this.btnAgendar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMenuInvestigador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenuInvestigador";
             this.ResumeLayout(false);
 
