@@ -24,11 +24,7 @@ namespace ProgramAppointments
             this.Hide();
         }
 
-        private void BtnConsultar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
             consultarReuLider frmConsultar = new consultarReuLider();
