@@ -220,24 +220,30 @@ namespace ProgramAppointments
         // MÉTODOS DE DOBLE CLIC COMPLETADO
         private async void datagrid_reuniones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Evitamos errores si el usuario hace clic en el encabezado de las columnas
             if (e.RowIndex < 0 || e.RowIndex >= _reunionesCargadas.Count) return;
 
-            // Buscamos la reunión específica en nuestra lista de memoria
-            var reunionSeleccionada = _reunionesCargadas[e.RowIndex];
+            // Esta es la reunión "vieja" que quedó en la memoria de la grilla
+            var reunionEnMemoria = _reunionesCargadas[e.RowIndex];
 
             try
             {
-                // Vamos a la base de datos a buscar a los usuarios por su ID
-                var integrantes = await _context.Usuarios
-                    .Find(u => reunionSeleccionada.ParticipantesIds.Contains(u.IdUsuario))
-                    .ToListAsync();
+                // SOLUCIÓN: Vamos a Mongo a buscar la versión MÁS RECIENTE de esta reunión usando su ID
+                var reunionFresca = await _context.Reuniones
+                    .Find(r => r.IdReunion == reunionEnMemoria.IdReunion)
+                    .FirstOrDefaultAsync();
 
-                // Construimos el string con los nombres de todos
-                string listaNombres = string.Join("\n", integrantes.Select(i => $"- {i.Nombre} {i.Apellido} ({i.Rol})"));
+                if (reunionFresca != null)
+                {
+                    // Ahora buscamos a los usuarios usando los IDs de la reunión fresca
+                    var integrantes = await _context.Usuarios
+                        .Find(u => reunionFresca.ParticipantesIds.Contains(u.IdUsuario))
+                        .ToListAsync();
 
-                MessageBox.Show($"Integrantes de la reunión '{reunionSeleccionada.Nombre}':\n\n{listaNombres}",
-                    "Detalles de Integrantes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string listaNombres = string.Join("\n", integrantes.Select(i => $"- {i.Nombre} {i.Apellido} ({i.Rol})"));
+
+                    MessageBox.Show($"Integrantes de la reunión '{reunionFresca.Nombre}':\n\n{listaNombres}",
+                        "Detalles de Integrantes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -253,6 +259,11 @@ namespace ProgramAppointments
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void datagrid_reuniones_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -30,12 +30,12 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_welcome = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.datagrid_reuniones = new System.Windows.Forms.DataGridView();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.calendar_picker = new System.Windows.Forms.MonthCalendar();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_reuniones)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -49,6 +49,7 @@
             this.button1.TabIndex = 11;
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbl_welcome
             // 
@@ -61,40 +62,43 @@
             this.lbl_welcome.TabIndex = 8;
             this.lbl_welcome.Text = "Consultar Reuniones";
             // 
-            // dataGridView1
+            // datagrid_reuniones
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(445, 97);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(440, 242);
-            this.dataGridView1.TabIndex = 12;
+            this.datagrid_reuniones.BackgroundColor = System.Drawing.Color.White;
+            this.datagrid_reuniones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_reuniones.Location = new System.Drawing.Point(445, 97);
+            this.datagrid_reuniones.Name = "datagrid_reuniones";
+            this.datagrid_reuniones.Size = new System.Drawing.Size(440, 242);
+            this.datagrid_reuniones.TabIndex = 12;
+            this.datagrid_reuniones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_reuniones_CellContentClick);
             // 
-            // button2
+            // btn_editar
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Location = new System.Drawing.Point(445, 366);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 46);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_editar.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editar.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_editar.Location = new System.Drawing.Point(445, 366);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(214, 46);
+            this.btn_editar.TabIndex = 13;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
-            // button3
+            // btn_eliminar
             // 
-            this.button3.BackColor = System.Drawing.Color.Thistle;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(671, 366);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(214, 46);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_eliminar.BackColor = System.Drawing.Color.Thistle;
+            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminar.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_eliminar.Location = new System.Drawing.Point(671, 366);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(214, 46);
+            this.btn_eliminar.TabIndex = 14;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // label2
             // 
@@ -113,6 +117,7 @@
             this.calendar_picker.Location = new System.Drawing.Point(68, 128);
             this.calendar_picker.Name = "calendar_picker";
             this.calendar_picker.TabIndex = 7;
+            this.calendar_picker.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_picker_DateChanged);
             // 
             // consultarReuLider
             // 
@@ -120,16 +125,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
             this.ClientSize = new System.Drawing.Size(909, 544);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btn_eliminar);
+            this.Controls.Add(this.btn_editar);
+            this.Controls.Add(this.datagrid_reuniones);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_welcome);
             this.Controls.Add(this.calendar_picker);
             this.Name = "consultarReuLider";
             this.Text = "consultarReuLider";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.consultarReuLider_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_reuniones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,9 +145,9 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_welcome;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView datagrid_reuniones;
+        private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MonthCalendar calendar_picker;
     }

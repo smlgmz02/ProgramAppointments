@@ -25,7 +25,9 @@ namespace ProgramAppointments
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            consultarReuLider frmConsultar = new consultarReuLider();
+            frmConsultar.ShowDialog();
+            this.Close();
         }
     }
 }

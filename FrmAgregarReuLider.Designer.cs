@@ -60,6 +60,7 @@
             this.datagrid_reuniones.Name = "datagrid_reuniones";
             this.datagrid_reuniones.Size = new System.Drawing.Size(410, 213);
             this.datagrid_reuniones.TabIndex = 0;
+            this.datagrid_reuniones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_reuniones_CellContentClick_1);
             this.datagrid_reuniones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_reuniones_CellDoubleClick);
             // 
             // label1

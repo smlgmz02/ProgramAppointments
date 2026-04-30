@@ -35,18 +35,15 @@
             this.txtnombrereu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblDia = new System.Windows.Forms.Label();
             this.txtHoraFinal = new System.Windows.Forms.TextBox();
             this.txtHoraInicio = new System.Windows.Forms.TextBox();
-            this.txtDia = new System.Windows.Forms.TextBox();
-            this.txtMes = new System.Windows.Forms.TextBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.combobox_investig_disponibles = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnDesvincular = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_guardar_edicion = new Guna.UI2.WinForms.Guna2Button();
+            this.combobox_investig_vinculados = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnVincular = new Guna.UI2.WinForms.Guna2Button();
+            this.calendar_fecha = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
             // label7
@@ -54,7 +51,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(44, 233);
+            this.label7.Location = new System.Drawing.Point(334, 225);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 17);
             this.label7.TabIndex = 35;
@@ -62,17 +59,18 @@
             // 
             // txtmotivoreu
             // 
-            this.txtmotivoreu.Location = new System.Drawing.Point(229, 118);
+            this.txtmotivoreu.Location = new System.Drawing.Point(572, 119);
             this.txtmotivoreu.Name = "txtmotivoreu";
             this.txtmotivoreu.Size = new System.Drawing.Size(137, 20);
             this.txtmotivoreu.TabIndex = 34;
+            this.txtmotivoreu.TextChanged += new System.EventHandler(this.txtmotivoreu_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(231, 98);
+            this.label6.Location = new System.Drawing.Point(574, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 33;
@@ -83,7 +81,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(226, 31);
+            this.label5.Location = new System.Drawing.Point(367, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 17);
             this.label5.TabIndex = 32;
@@ -91,17 +89,18 @@
             // 
             // txtnombrereu
             // 
-            this.txtnombrereu.Location = new System.Drawing.Point(229, 52);
+            this.txtnombrereu.Location = new System.Drawing.Point(370, 120);
             this.txtnombrereu.Name = "txtnombrereu";
             this.txtnombrereu.Size = new System.Drawing.Size(137, 20);
             this.txtnombrereu.TabIndex = 31;
+            this.txtnombrereu.TextChanged += new System.EventHandler(this.txtnombrereu_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(230, 165);
+            this.label4.Location = new System.Drawing.Point(573, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 30;
@@ -112,169 +111,150 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 165);
+            this.label3.Location = new System.Drawing.Point(386, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 29;
             this.label3.Text = "Hora inicio";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 17);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Mes";
-            // 
-            // lblDia
-            // 
-            this.lblDia.AutoSize = true;
-            this.lblDia.BackColor = System.Drawing.Color.Transparent;
-            this.lblDia.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDia.Location = new System.Drawing.Point(35, 141);
-            this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(29, 17);
-            this.lblDia.TabIndex = 27;
-            this.lblDia.Text = "Dia";
-            // 
             // txtHoraFinal
             // 
-            this.txtHoraFinal.Location = new System.Drawing.Point(229, 185);
+            this.txtHoraFinal.Location = new System.Drawing.Point(572, 186);
             this.txtHoraFinal.Name = "txtHoraFinal";
             this.txtHoraFinal.Size = new System.Drawing.Size(137, 20);
             this.txtHoraFinal.TabIndex = 24;
+            this.txtHoraFinal.TextChanged += new System.EventHandler(this.txtHoraFinal_TextChanged);
             // 
             // txtHoraInicio
             // 
-            this.txtHoraInicio.Location = new System.Drawing.Point(39, 185);
+            this.txtHoraInicio.Location = new System.Drawing.Point(370, 186);
             this.txtHoraInicio.Name = "txtHoraInicio";
             this.txtHoraInicio.Size = new System.Drawing.Size(137, 20);
             this.txtHoraInicio.TabIndex = 23;
+            this.txtHoraInicio.TextChanged += new System.EventHandler(this.txtHoraInicio_TextChanged);
             // 
-            // txtDia
+            // combobox_investig_disponibles
             // 
-            this.txtDia.Location = new System.Drawing.Point(39, 118);
-            this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(137, 20);
-            this.txtDia.TabIndex = 22;
+            this.combobox_investig_disponibles.BackColor = System.Drawing.Color.Transparent;
+            this.combobox_investig_disponibles.BorderRadius = 10;
+            this.combobox_investig_disponibles.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combobox_investig_disponibles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_investig_disponibles.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_investig_disponibles.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_investig_disponibles.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.combobox_investig_disponibles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.combobox_investig_disponibles.ItemHeight = 30;
+            this.combobox_investig_disponibles.Location = new System.Drawing.Point(561, 252);
+            this.combobox_investig_disponibles.Name = "combobox_investig_disponibles";
+            this.combobox_investig_disponibles.Size = new System.Drawing.Size(189, 36);
+            this.combobox_investig_disponibles.TabIndex = 36;
+            this.combobox_investig_disponibles.SelectedIndexChanged += new System.EventHandler(this.combobox_investig_disponibles_SelectedIndexChanged);
             // 
-            // txtMes
+            // btnDesvincular
             // 
-            this.txtMes.Location = new System.Drawing.Point(39, 52);
-            this.txtMes.Name = "txtMes";
-            this.txtMes.Size = new System.Drawing.Size(137, 20);
-            this.txtMes.TabIndex = 21;
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 10;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(501, 260);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(189, 36);
-            this.guna2ComboBox1.TabIndex = 36;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.guna2Button1.Location = new System.Drawing.Point(501, 320);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 31);
-            this.guna2Button1.TabIndex = 37;
-            this.guna2Button1.Text = "guna2Button1";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnDesvincular.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnDesvincular.BorderRadius = 10;
+            this.btnDesvincular.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnDesvincular.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDesvincular.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDesvincular.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDesvincular.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDesvincular.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.btnDesvincular.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDesvincular.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnDesvincular.Location = new System.Drawing.Point(330, 310);
+            this.btnDesvincular.Name = "btnDesvincular";
+            this.btnDesvincular.Size = new System.Drawing.Size(180, 31);
+            this.btnDesvincular.TabIndex = 37;
+            this.btnDesvincular.Text = "desvincular";
+            this.btnDesvincular.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(509, 233);
+            this.label1.Location = new System.Drawing.Point(569, 225);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 17);
             this.label1.TabIndex = 38;
             this.label1.Text = "Investigador Disponibles";
             // 
-            // guna2Button2
+            // btn_guardar_edicion
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.guna2Button2.Location = new System.Drawing.Point(333, 393);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button2.TabIndex = 39;
-            this.guna2Button2.Text = "guna2Button2";
+            this.btn_guardar_edicion.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btn_guardar_edicion.BorderRadius = 10;
+            this.btn_guardar_edicion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_guardar_edicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_guardar_edicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_guardar_edicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_guardar_edicion.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.btn_guardar_edicion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_guardar_edicion.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_guardar_edicion.Location = new System.Drawing.Point(282, 393);
+            this.btn_guardar_edicion.Name = "btn_guardar_edicion";
+            this.btn_guardar_edicion.Size = new System.Drawing.Size(180, 45);
+            this.btn_guardar_edicion.TabIndex = 39;
+            this.btn_guardar_edicion.Text = "Guardar edicion";
+            this.btn_guardar_edicion.Click += new System.EventHandler(this.btn_guardar_edicion_Click);
             // 
-            // guna2ComboBox2
+            // combobox_investig_vinculados
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.BorderRadius = 10;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(42, 260);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(324, 36);
-            this.guna2ComboBox2.TabIndex = 40;
+            this.combobox_investig_vinculados.BackColor = System.Drawing.Color.Transparent;
+            this.combobox_investig_vinculados.BorderRadius = 10;
+            this.combobox_investig_vinculados.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combobox_investig_vinculados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_investig_vinculados.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_investig_vinculados.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_investig_vinculados.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.combobox_investig_vinculados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.combobox_investig_vinculados.ItemHeight = 30;
+            this.combobox_investig_vinculados.Location = new System.Drawing.Point(332, 252);
+            this.combobox_investig_vinculados.Name = "combobox_investig_vinculados";
+            this.combobox_investig_vinculados.Size = new System.Drawing.Size(178, 36);
+            this.combobox_investig_vinculados.TabIndex = 40;
+            this.combobox_investig_vinculados.SelectedIndexChanged += new System.EventHandler(this.combobox_investig_vinculados_SelectedIndexChanged);
             // 
-            // guna2Button3
+            // btnVincular
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button3.BorderRadius = 10;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.guna2Button3.Location = new System.Drawing.Point(47, 320);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(319, 31);
-            this.guna2Button3.TabIndex = 41;
-            this.guna2Button3.Text = "guna2Button3";
+            this.btnVincular.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnVincular.BorderRadius = 10;
+            this.btnVincular.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVincular.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVincular.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVincular.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVincular.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.btnVincular.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVincular.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnVincular.Location = new System.Drawing.Point(572, 310);
+            this.btnVincular.Name = "btnVincular";
+            this.btnVincular.Size = new System.Drawing.Size(170, 31);
+            this.btnVincular.TabIndex = 41;
+            this.btnVincular.Text = "vincular";
+            this.btnVincular.Click += new System.EventHandler(this.btnVincular_Click);
+            // 
+            // calendar_fecha
+            // 
+            this.calendar_fecha.Location = new System.Drawing.Point(37, 54);
+            this.calendar_fecha.Name = "calendar_fecha";
+            this.calendar_fecha.TabIndex = 42;
+            this.calendar_fecha.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_fecha_DateChanged);
             // 
             // EditarReuLider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
+            this.CancelButton = this.btnDesvincular;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2ComboBox2);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.calendar_fecha);
+            this.Controls.Add(this.btnVincular);
+            this.Controls.Add(this.combobox_investig_vinculados);
+            this.Controls.Add(this.btn_guardar_edicion);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.btnDesvincular);
+            this.Controls.Add(this.combobox_investig_disponibles);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtmotivoreu);
             this.Controls.Add(this.label6);
@@ -282,14 +262,11 @@
             this.Controls.Add(this.txtnombrereu);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblDia);
             this.Controls.Add(this.txtHoraFinal);
             this.Controls.Add(this.txtHoraInicio);
-            this.Controls.Add(this.txtDia);
-            this.Controls.Add(this.txtMes);
             this.Name = "EditarReuLider";
             this.Text = "EditarReuLider";
+            this.Load += new System.EventHandler(this.EditarReuLider_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,17 +281,14 @@
         private System.Windows.Forms.TextBox txtnombrereu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblDia;
         private System.Windows.Forms.TextBox txtHoraFinal;
         private System.Windows.Forms.TextBox txtHoraInicio;
-        private System.Windows.Forms.TextBox txtDia;
-        private System.Windows.Forms.TextBox txtMes;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_investig_disponibles;
+        private Guna.UI2.WinForms.Guna2Button btnDesvincular;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btn_guardar_edicion;
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_investig_vinculados;
+        private Guna.UI2.WinForms.Guna2Button btnVincular;
+        private System.Windows.Forms.MonthCalendar calendar_fecha;
     }
 }
