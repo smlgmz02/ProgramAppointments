@@ -57,7 +57,7 @@
             this.datagrid_reuniones.BackgroundColor = System.Drawing.Color.White;
             this.datagrid_reuniones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagrid_reuniones.Location = new System.Drawing.Point(596, 105);
-            this.datagrid_reuniones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datagrid_reuniones.Margin = new System.Windows.Forms.Padding(4);
             this.datagrid_reuniones.Name = "datagrid_reuniones";
             this.datagrid_reuniones.RowHeadersWidth = 51;
             this.datagrid_reuniones.Size = new System.Drawing.Size(547, 262);
@@ -80,7 +80,7 @@
             // txtMes
             // 
             this.txtMes.Location = new System.Drawing.Point(40, 123);
-            this.txtMes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMes.Margin = new System.Windows.Forms.Padding(4);
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(181, 22);
             this.txtMes.TabIndex = 2;
@@ -88,7 +88,7 @@
             // txtDia
             // 
             this.txtDia.Location = new System.Drawing.Point(40, 204);
-            this.txtDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDia.Name = "txtDia";
             this.txtDia.Size = new System.Drawing.Size(181, 22);
             this.txtDia.TabIndex = 3;
@@ -96,7 +96,7 @@
             // txtHoraInicio
             // 
             this.txtHoraInicio.Location = new System.Drawing.Point(40, 287);
-            this.txtHoraInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHoraInicio.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoraInicio.Name = "txtHoraInicio";
             this.txtHoraInicio.Size = new System.Drawing.Size(181, 22);
             this.txtHoraInicio.TabIndex = 4;
@@ -104,7 +104,7 @@
             // txtHoraFinal
             // 
             this.txtHoraFinal.Location = new System.Drawing.Point(293, 287);
-            this.txtHoraFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHoraFinal.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoraFinal.Name = "txtHoraFinal";
             this.txtHoraFinal.Size = new System.Drawing.Size(181, 22);
             this.txtHoraFinal.TabIndex = 5;
@@ -113,7 +113,7 @@
             // 
             this.combo_investigadores.FormattingEnabled = true;
             this.combo_investigadores.Location = new System.Drawing.Point(40, 370);
-            this.combo_investigadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combo_investigadores.Margin = new System.Windows.Forms.Padding(4);
             this.combo_investigadores.Name = "combo_investigadores";
             this.combo_investigadores.Size = new System.Drawing.Size(435, 24);
             this.combo_investigadores.TabIndex = 6;
@@ -123,7 +123,7 @@
             this.btn_agg_inv.BackColor = System.Drawing.Color.White;
             this.btn_agg_inv.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agg_inv.Location = new System.Drawing.Point(40, 431);
-            this.btn_agg_inv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_agg_inv.Margin = new System.Windows.Forms.Padding(4);
             this.btn_agg_inv.Name = "btn_agg_inv";
             this.btn_agg_inv.Size = new System.Drawing.Size(436, 38);
             this.btn_agg_inv.TabIndex = 7;
@@ -138,7 +138,7 @@
             this.btn_agendar_reu.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agendar_reu.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_agendar_reu.Location = new System.Drawing.Point(780, 398);
-            this.btn_agendar_reu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_agendar_reu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_agendar_reu.Name = "btn_agendar_reu";
             this.btn_agendar_reu.Size = new System.Drawing.Size(200, 52);
             this.btn_agendar_reu.TabIndex = 8;
@@ -198,7 +198,7 @@
             // 
             this.pictureBox1.Image = global::ProgramAppointments.Properties.Resources.Captura_de_pantalla_2026_04_24_124234;
             this.pictureBox1.Location = new System.Drawing.Point(1151, 478);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +208,7 @@
             // txtnombrereu
             // 
             this.txtnombrereu.Location = new System.Drawing.Point(293, 123);
-            this.txtnombrereu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnombrereu.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombrereu.Name = "txtnombrereu";
             this.txtnombrereu.Size = new System.Drawing.Size(181, 22);
             this.txtnombrereu.TabIndex = 14;
@@ -241,7 +241,7 @@
             // txtmotivoreu
             // 
             this.txtmotivoreu.Location = new System.Drawing.Point(293, 204);
-            this.txtmotivoreu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmotivoreu.Margin = new System.Windows.Forms.Padding(4);
             this.txtmotivoreu.Name = "txtmotivoreu";
             this.txtmotivoreu.Size = new System.Drawing.Size(181, 22);
             this.txtmotivoreu.TabIndex = 17;
@@ -254,7 +254,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::ProgramAppointments.Properties.Resources.flecha_izquierda;
             this.button2.Location = new System.Drawing.Point(44, 15);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(43, 41);
             this.button2.TabIndex = 19;
@@ -281,6 +281,7 @@
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1224, 544);
+            this.ControlBox = false;
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtmotivoreu);
@@ -301,10 +302,10 @@
             this.Controls.Add(this.txtMes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.datagrid_reuniones);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAgregarReuLider";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAgregarReuLider";
+            this.Text = "MEETLY - AGREGAR REUNIÓN";
             this.Load += new System.EventHandler(this.FrmAgregarReuLider_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_reuniones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -44,6 +44,8 @@
             this.combobox_investig_vinculados = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnVincular = new Guna.UI2.WinForms.Guna2Button();
             this.calendar_fecha = new System.Windows.Forms.MonthCalendar();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -51,17 +53,19 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(334, 225);
+            this.label7.Location = new System.Drawing.Point(410, 195);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 17);
+            this.label7.Size = new System.Drawing.Size(217, 22);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Investigador Vinculados";
+            this.label7.Text = "Investigadores Vinculados";
             // 
             // txtmotivoreu
             // 
-            this.txtmotivoreu.Location = new System.Drawing.Point(572, 119);
+            this.txtmotivoreu.Location = new System.Drawing.Point(687, 85);
+            this.txtmotivoreu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtmotivoreu.Name = "txtmotivoreu";
-            this.txtmotivoreu.Size = new System.Drawing.Size(137, 20);
+            this.txtmotivoreu.Size = new System.Drawing.Size(204, 27);
             this.txtmotivoreu.TabIndex = 34;
             this.txtmotivoreu.TextChanged += new System.EventHandler(this.txtmotivoreu_TextChanged);
             // 
@@ -70,9 +74,10 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(574, 99);
+            this.label6.Location = new System.Drawing.Point(689, 61);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.Size = new System.Drawing.Size(67, 22);
             this.label6.TabIndex = 33;
             this.label6.Text = "Motivo";
             // 
@@ -81,17 +86,19 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(367, 99);
+            this.label5.Location = new System.Drawing.Point(410, 59);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 17);
+            this.label5.Size = new System.Drawing.Size(186, 22);
             this.label5.TabIndex = 32;
             this.label5.Text = "Nombre de la reunion";
             // 
             // txtnombrereu
             // 
-            this.txtnombrereu.Location = new System.Drawing.Point(370, 120);
+            this.txtnombrereu.Location = new System.Drawing.Point(414, 85);
+            this.txtnombrereu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtnombrereu.Name = "txtnombrereu";
-            this.txtnombrereu.Size = new System.Drawing.Size(137, 20);
+            this.txtnombrereu.Size = new System.Drawing.Size(181, 27);
             this.txtnombrereu.TabIndex = 31;
             this.txtnombrereu.TextChanged += new System.EventHandler(this.txtnombrereu_TextChanged);
             // 
@@ -100,9 +107,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(573, 166);
+            this.label4.Location = new System.Drawing.Point(688, 119);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.Size = new System.Drawing.Size(92, 22);
             this.label4.TabIndex = 30;
             this.label4.Text = "Hora Final";
             // 
@@ -111,32 +119,35 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(386, 166);
+            this.label3.Location = new System.Drawing.Point(410, 120);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 17);
+            this.label3.Size = new System.Drawing.Size(97, 22);
             this.label3.TabIndex = 29;
             this.label3.Text = "Hora inicio";
             // 
             // txtHoraFinal
             // 
-            this.txtHoraFinal.Location = new System.Drawing.Point(572, 186);
+            this.txtHoraFinal.Location = new System.Drawing.Point(687, 144);
+            this.txtHoraFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHoraFinal.Name = "txtHoraFinal";
-            this.txtHoraFinal.Size = new System.Drawing.Size(137, 20);
+            this.txtHoraFinal.Size = new System.Drawing.Size(204, 27);
             this.txtHoraFinal.TabIndex = 24;
             this.txtHoraFinal.TextChanged += new System.EventHandler(this.txtHoraFinal_TextChanged);
             // 
             // txtHoraInicio
             // 
-            this.txtHoraInicio.Location = new System.Drawing.Point(370, 186);
+            this.txtHoraInicio.Location = new System.Drawing.Point(412, 146);
+            this.txtHoraInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHoraInicio.Name = "txtHoraInicio";
-            this.txtHoraInicio.Size = new System.Drawing.Size(137, 20);
+            this.txtHoraInicio.Size = new System.Drawing.Size(181, 27);
             this.txtHoraInicio.TabIndex = 23;
             this.txtHoraInicio.TextChanged += new System.EventHandler(this.txtHoraInicio_TextChanged);
             // 
             // combobox_investig_disponibles
             // 
             this.combobox_investig_disponibles.BackColor = System.Drawing.Color.Transparent;
-            this.combobox_investig_disponibles.BorderRadius = 10;
+            this.combobox_investig_disponibles.BorderRadius = 5;
             this.combobox_investig_disponibles.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.combobox_investig_disponibles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobox_investig_disponibles.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -144,29 +155,32 @@
             this.combobox_investig_disponibles.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.combobox_investig_disponibles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.combobox_investig_disponibles.ItemHeight = 30;
-            this.combobox_investig_disponibles.Location = new System.Drawing.Point(561, 252);
+            this.combobox_investig_disponibles.Location = new System.Drawing.Point(687, 226);
+            this.combobox_investig_disponibles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.combobox_investig_disponibles.Name = "combobox_investig_disponibles";
-            this.combobox_investig_disponibles.Size = new System.Drawing.Size(189, 36);
+            this.combobox_investig_disponibles.Size = new System.Drawing.Size(204, 36);
             this.combobox_investig_disponibles.TabIndex = 36;
             this.combobox_investig_disponibles.SelectedIndexChanged += new System.EventHandler(this.combobox_investig_disponibles_SelectedIndexChanged);
             // 
             // btnDesvincular
             // 
             this.btnDesvincular.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnDesvincular.BorderRadius = 10;
+            this.btnDesvincular.BorderRadius = 5;
+            this.btnDesvincular.BorderThickness = 1;
             this.btnDesvincular.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnDesvincular.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDesvincular.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDesvincular.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDesvincular.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDesvincular.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.btnDesvincular.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDesvincular.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesvincular.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnDesvincular.Location = new System.Drawing.Point(330, 310);
+            this.btnDesvincular.Location = new System.Drawing.Point(403, 278);
+            this.btnDesvincular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDesvincular.Name = "btnDesvincular";
-            this.btnDesvincular.Size = new System.Drawing.Size(180, 31);
+            this.btnDesvincular.Size = new System.Drawing.Size(193, 55);
             this.btnDesvincular.TabIndex = 37;
-            this.btnDesvincular.Text = "desvincular";
+            this.btnDesvincular.Text = "DESVINCULAR";
             this.btnDesvincular.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label1
@@ -174,34 +188,39 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(569, 225);
+            this.label1.Location = new System.Drawing.Point(683, 193);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 17);
+            this.label1.Size = new System.Drawing.Size(208, 22);
             this.label1.TabIndex = 38;
             this.label1.Text = "Investigador Disponibles";
             // 
             // btn_guardar_edicion
             // 
+            this.btn_guardar_edicion.Animated = true;
             this.btn_guardar_edicion.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btn_guardar_edicion.BorderRadius = 10;
+            this.btn_guardar_edicion.BorderRadius = 5;
+            this.btn_guardar_edicion.BorderThickness = 1;
+            this.btn_guardar_edicion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_guardar_edicion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_guardar_edicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_guardar_edicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_guardar_edicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_guardar_edicion.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.btn_guardar_edicion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_guardar_edicion.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold);
             this.btn_guardar_edicion.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_guardar_edicion.Location = new System.Drawing.Point(282, 393);
+            this.btn_guardar_edicion.Location = new System.Drawing.Point(32, 278);
+            this.btn_guardar_edicion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_guardar_edicion.Name = "btn_guardar_edicion";
-            this.btn_guardar_edicion.Size = new System.Drawing.Size(180, 45);
+            this.btn_guardar_edicion.Size = new System.Drawing.Size(290, 55);
             this.btn_guardar_edicion.TabIndex = 39;
-            this.btn_guardar_edicion.Text = "Guardar edicion";
+            this.btn_guardar_edicion.Text = "Guardar Cambios";
             this.btn_guardar_edicion.Click += new System.EventHandler(this.btn_guardar_edicion_Click);
             // 
             // combobox_investig_vinculados
             // 
             this.combobox_investig_vinculados.BackColor = System.Drawing.Color.Transparent;
-            this.combobox_investig_vinculados.BorderRadius = 10;
+            this.combobox_investig_vinculados.BorderRadius = 5;
             this.combobox_investig_vinculados.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.combobox_investig_vinculados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobox_investig_vinculados.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -209,66 +228,85 @@
             this.combobox_investig_vinculados.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.combobox_investig_vinculados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.combobox_investig_vinculados.ItemHeight = 30;
-            this.combobox_investig_vinculados.Location = new System.Drawing.Point(332, 252);
+            this.combobox_investig_vinculados.Location = new System.Drawing.Point(407, 228);
+            this.combobox_investig_vinculados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.combobox_investig_vinculados.Name = "combobox_investig_vinculados";
-            this.combobox_investig_vinculados.Size = new System.Drawing.Size(178, 36);
+            this.combobox_investig_vinculados.Size = new System.Drawing.Size(189, 36);
             this.combobox_investig_vinculados.TabIndex = 40;
             this.combobox_investig_vinculados.SelectedIndexChanged += new System.EventHandler(this.combobox_investig_vinculados_SelectedIndexChanged);
             // 
             // btnVincular
             // 
             this.btnVincular.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnVincular.BorderRadius = 10;
+            this.btnVincular.BorderRadius = 5;
+            this.btnVincular.BorderThickness = 1;
             this.btnVincular.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnVincular.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnVincular.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnVincular.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnVincular.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.btnVincular.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVincular.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVincular.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnVincular.Location = new System.Drawing.Point(572, 310);
+            this.btnVincular.Location = new System.Drawing.Point(687, 278);
+            this.btnVincular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVincular.Name = "btnVincular";
-            this.btnVincular.Size = new System.Drawing.Size(170, 31);
+            this.btnVincular.Size = new System.Drawing.Size(204, 55);
             this.btnVincular.TabIndex = 41;
-            this.btnVincular.Text = "vincular";
+            this.btnVincular.Text = "VINCULAR";
             this.btnVincular.Click += new System.EventHandler(this.btnVincular_Click);
             // 
             // calendar_fecha
             // 
-            this.calendar_fecha.Location = new System.Drawing.Point(37, 54);
+            this.calendar_fecha.Location = new System.Drawing.Point(32, 57);
+            this.calendar_fecha.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.calendar_fecha.Name = "calendar_fecha";
             this.calendar_fecha.TabIndex = 42;
             this.calendar_fecha.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_fecha_DateChanged);
             // 
+            // guna2GroupBox1
+            // 
+            this.guna2GroupBox1.Controls.Add(this.calendar_fecha);
+            this.guna2GroupBox1.Controls.Add(this.btn_guardar_edicion);
+            this.guna2GroupBox1.Controls.Add(this.btnVincular);
+            this.guna2GroupBox1.Controls.Add(this.combobox_investig_vinculados);
+            this.guna2GroupBox1.Controls.Add(this.label1);
+            this.guna2GroupBox1.Controls.Add(this.btnDesvincular);
+            this.guna2GroupBox1.Controls.Add(this.combobox_investig_disponibles);
+            this.guna2GroupBox1.Controls.Add(this.label7);
+            this.guna2GroupBox1.Controls.Add(this.txtmotivoreu);
+            this.guna2GroupBox1.Controls.Add(this.label6);
+            this.guna2GroupBox1.Controls.Add(this.label5);
+            this.guna2GroupBox1.Controls.Add(this.txtnombrereu);
+            this.guna2GroupBox1.Controls.Add(this.label4);
+            this.guna2GroupBox1.Controls.Add(this.label3);
+            this.guna2GroupBox1.Controls.Add(this.txtHoraFinal);
+            this.guna2GroupBox1.Controls.Add(this.txtHoraInicio);
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2GroupBox1.Location = new System.Drawing.Point(37, 39);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(920, 434);
+            this.guna2GroupBox1.TabIndex = 43;
+            this.guna2GroupBox1.Text = "PROGRAMACIÓN";
+            // 
             // EditarReuLider
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = global::ProgramAppointments.Properties.Resources.MEETLYFONDO;
             this.CancelButton = this.btnDesvincular;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.calendar_fecha);
-            this.Controls.Add(this.btnVincular);
-            this.Controls.Add(this.combobox_investig_vinculados);
-            this.Controls.Add(this.btn_guardar_edicion);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnDesvincular);
-            this.Controls.Add(this.combobox_investig_disponibles);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtmotivoreu);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtnombrereu);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtHoraFinal);
-            this.Controls.Add(this.txtHoraInicio);
+            this.ClientSize = new System.Drawing.Size(980, 497);
+            this.ControlBox = false;
+            this.Controls.Add(this.guna2GroupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditarReuLider";
-            this.Text = "EditarReuLider";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MEETLY - EDITAR REUNIÓN";
             this.Load += new System.EventHandler(this.EditarReuLider_Load);
+            this.guna2GroupBox1.ResumeLayout(false);
+            this.guna2GroupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -290,5 +328,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox combobox_investig_vinculados;
         private Guna.UI2.WinForms.Guna2Button btnVincular;
         private System.Windows.Forms.MonthCalendar calendar_fecha;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
     }
 }
