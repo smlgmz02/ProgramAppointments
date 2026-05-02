@@ -20,7 +20,6 @@ namespace ProgramAppointments
         private List<Usuario> _investigadoresDisponibles;
         private List<Usuario> _investigadoresVinculados;
 
-        // Constructor por defecto necesario para el diseñador
         public EditarReuLider()
         {
             InitializeComponent();
@@ -39,26 +38,26 @@ namespace ProgramAppointments
 
         private async void EditarReuLider_Load(object sender, EventArgs e)
         {
-            // 1. Mapear datos básicos a la interfaz
+            // mapear datos básicos a la interfaz
             txtnombrereu.Text = _reunionActual.Nombre;
             txtmotivoreu.Text = _reunionActual.Motivo;
 
-            // Pasamos a hora local para mostrar en pantalla
+            // pasamos a hora local para mostrar en pantalla
             DateTime fechaInicioLocal = _reunionActual.FechaInicio.ToLocalTime();
             DateTime fechaFinLocal = _reunionActual.FechaFin.ToLocalTime();
 
             txtHoraInicio.Text = fechaInicioLocal.ToString("HH:mm");
             txtHoraFinal.Text = fechaFinLocal.ToString("HH:mm");
 
-            // Setear el calendario a la fecha de la reunión original
+            // setear el calendario a la fecha de la reunión original
             calendar_fecha.SelectionStart = fechaInicioLocal.Date;
             calendar_fecha.SelectionEnd = fechaInicioLocal.Date;
 
-            // Bloquear teclas no válidas en las horas
+            // bloquear teclas no válidas en las horas
             txtHoraInicio.KeyPress += ValidarEntradaHora;
             txtHoraFinal.KeyPress += ValidarEntradaHora;
 
-            // 2. Cargar listas de investigadores
+            //  finalmente se cargan a las listas de investigadores
             await CargarListasUsuarios();
         }
 
@@ -128,7 +127,7 @@ namespace ProgramAppointments
             return true;
         }
 
-        // BOTÓN: VINCULAR (Pasar de Disponibles a Vinculados)
+        // evento para vincular un investigador seleccionado
         private async void btnVincular_Click(object sender, EventArgs e)
         {
             if (combobox_investig_disponibles.SelectedItem == null) return;
@@ -154,8 +153,6 @@ namespace ProgramAppointments
                     "Usuario Ocupado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // BORRADO E INSERCIÓN INFALIBLE POR ID
             _investigadoresDisponibles.RemoveAll(u => u.IdUsuario == idAAgregar);
 
             if (!_investigadoresVinculados.Any(u => u.IdUsuario == idAAgregar))
@@ -168,9 +165,8 @@ namespace ProgramAppointments
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            // no se pueden quedar reuniones sin investigadores
             if (combobox_investig_vinculados.SelectedItem == null) return;
-
-            // NUEVA VALIDACIÓN: Impedir que la lista se quede vacía
             if (_investigadoresVinculados.Count <= 1)
             {
                 MessageBox.Show("No puedes desvincular a este investigador porque la reunión quedaría vacía. Si deseas cambiarlo, primero vincula al nuevo investigador y luego desvincula a este.",
@@ -178,14 +174,11 @@ namespace ProgramAppointments
                 return; // Cortamos la ejecución aquí, no borra nada
             }
 
-            // Obtenemos el objeto y extraemos su ID único
+            // obtenemos el objeto y extraemos su ID único
             Usuario invSeleccionado = (Usuario)combobox_investig_vinculados.SelectedItem;
             int idAEliminar = invSeleccionado.IdUsuario;
-
-            // BORRADO INFALIBLE
             _investigadoresVinculados.RemoveAll(u => u.IdUsuario == idAEliminar);
-
-            // Lo agregamos a disponibles solo si no existe ya
+            // lo agregamos a disponibles solo si no existe ya
             if (!_investigadoresDisponibles.Any(u => u.IdUsuario == idAEliminar))
             {
                 _investigadoresDisponibles.Add(invSeleccionado);
@@ -269,5 +262,13 @@ namespace ProgramAppointments
         private void combobox_investig_disponibles_SelectedIndexChanged(object sender, EventArgs e) { }
         private void combobox_investig_vinculados_SelectedIndexChanged(object sender, EventArgs e) { }
         private void calendar_fecha_DateChanged(object sender, DateRangeEventArgs e) { }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("¿Estás seguro de que quieres cancelar la edición? Se perderán los cambios no guardados.", "MEETLY", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

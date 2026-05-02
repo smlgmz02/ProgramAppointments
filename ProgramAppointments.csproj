@@ -265,5 +265,35 @@
   <ItemGroup>
     <None Include="Resources\cerrar-sesion-de-usuario.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-izquierda1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-izquierda32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-izquierda64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda-de-lupa128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linea-vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\informacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-sesion-de-usuario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-sesion-de-usuario24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hogar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

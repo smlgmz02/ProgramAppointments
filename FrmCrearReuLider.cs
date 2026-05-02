@@ -88,18 +88,50 @@ namespace ProgramAppointments
             }
 
             // 3. Buscar y marcar los días que ya tienen reuniones en la base de datos
-            await MarcarDiasOcupados(); 
+            await MarcarDiasOcupados();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FrmMenuLider menuLider = new FrmMenuLider();
             menuLider.Show();
-             this.Hide();   
+            this.Hide();
+        }
+
+        private void btnSeleccionarDia_Click(object sender, EventArgs e)
+        {
+            // Capturamos el día exacto que el usuario tiene clickeado en el calendario
+            DateTime diaSeleccionado = calendar_picker.SelectionStart;
+            // Instanciamos la siguiente pantalla pasándole la fecha como parámetro
+            FrmAgregarReuLider frmAgregar = new FrmAgregarReuLider(diaSeleccionado);
+            frmAgregar.Show();
+            this.Hide();
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Deseas Cerrar Sesión?", "MEETLY", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Limpiamos la sesión del usuario
+                SesionUsuario.UsuarioLogueado = null;
+                // Volvemos al formulario de login
+                Form1 login = new Form1();
+                login.Show();
+                // Cerramos el formulario actual
+                this.Close();
+            }
         }
     }
-
-
-  
-        }
+}
     
