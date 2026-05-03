@@ -22,7 +22,9 @@ namespace ProgramAppointments
             InitializeComponent();
             // comentario feat de prueba
             // Inicializamos la conexión (Paso temporal, luego se puede inyectar)
+            // la variable context contiene la conexión a MongoDB, y se la pasamos al servicio de autenticación
             var context = new MongoDbContext("mongodb://localhost:27017", "REUNION");
+
             _authService = new AuthService(context);
         }
 
@@ -30,7 +32,6 @@ namespace ProgramAppointments
         {
             try
             {
-                // Usamos el mismo contexto que ya creaste arriba
                 var context = new MongoDbContext("mongodb://localhost:27017", "REUNION");
 
                 // Le pedimos a Mongo que cuente cuántos documentos hay en la colección
