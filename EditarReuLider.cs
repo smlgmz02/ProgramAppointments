@@ -38,6 +38,8 @@ namespace ProgramAppointments
 
         private async void EditarReuLider_Load(object sender, EventArgs e)
         {
+            calendar_fecha.MinDate = DateTime.Today;
+
             // mapear datos básicos a la interfaz
             txtnombrereu.Text = _reunionActual.Nombre;
             txtmotivoreu.Text = _reunionActual.Motivo;
@@ -269,6 +271,11 @@ namespace ProgramAppointments
             {
                 this.Close();
             }
+        }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

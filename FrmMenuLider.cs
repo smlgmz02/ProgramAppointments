@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgramAppointments.Application;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,20 @@ namespace ProgramAppointments
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Deseas Cerrar Sesión?", "MEETLY", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //fokinshit
+                SesionUsuario.UsuarioLogueado = null;
+
+                Form1 login = new Form1();
+                login.Show();
+
+                this.Close();
+            }
         }
     }
 }

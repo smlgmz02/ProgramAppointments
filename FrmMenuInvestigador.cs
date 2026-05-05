@@ -63,5 +63,24 @@ namespace ProgramAppointments
             frmConsultar.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Deseas Cerrar Sesión?", "MEETLY", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //fokinshit
+                SesionUsuario.UsuarioLogueado = null;
+                
+                Form1 login = new Form1();
+                login.Show();
+                
+                this.Close();
+            }
+        }
     }
 }
