@@ -178,17 +178,10 @@ namespace ProgramAppointments
 
             if (!IntentarParsearHoras(out DateTime inicio, out DateTime fin)) return;
 
-            var builder = Builders<Reunion>.Filter;
-            var filtroGlobal = builder.And(
-                builder.Lt(r => r.FechaInicio, fin.ToUniversalTime()),
-                builder.Gt(r => r.FechaFin, inicio.ToUniversalTime())
-            );
-
-            if (await _context.Reuniones.Find(filtroGlobal).AnyAsync())
-            {
-                MessageBox.Show("Ya existe una reunión en este horario.", "Cruce", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            // ====================================================================
+            // AQUÍ SE ELIMINÓ EL FILTRO GLOBAL DE HORARIOS. 
+            // Ahora la base de datos permite múltiples reuniones a la misma hora.
+            // ====================================================================
 
             var nueva = new Reunion
             {
@@ -253,29 +246,14 @@ namespace ProgramAppointments
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmCrearReuLider frmCrear = new FrmCrearReuLider(); 
+            FrmCrearReuLider frmCrear = new FrmCrearReuLider();
             frmCrear.Show();
             this.Close();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void datagrid_reuniones_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtHoraInicio_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label6_Click(object sender, EventArgs e) { }
+        private void datagrid_reuniones_CellContentClick_1(object sender, DataGridViewCellEventArgs e) { }
+        private void txtHoraInicio_TextChanged_1(object sender, EventArgs e) { }
+        private void label3_Click(object sender, EventArgs e) { }
     }
 }
