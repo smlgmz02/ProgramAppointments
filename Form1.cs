@@ -87,6 +87,13 @@ namespace ProgramAppointments
 
             var usuario = await _authService.LoginAsync(email, pass);
 
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(pass))
+            {
+                MessageBox.Show("Por favor, ingrese su email y contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }   
+
             if (usuario != null)
             {
                 SesionUsuario.UsuarioLogueado = usuario;
