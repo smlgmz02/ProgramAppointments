@@ -3,12 +3,8 @@ using ProgramAppointments.Application;
 using ProgramAppointments.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,79 +12,64 @@ namespace ProgramAppointments
 {
     public partial class FrmCrearReuLider : Form
     {
-
         private readonly MongoDbContext _context;
+
         public FrmCrearReuLider()
         {
             InitializeComponent();
-            // Inicializamos la conexión a Mongo para poder consultar los días ocupados
             _context = new MongoDbContext("mongodb://localhost:27017", "REUNION");
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        private async void FrmCrearReuLider_Load(object sender, EventArgs e)
         {
-
+            // configuracon visual (lunesnicio)
+            calendar_picker.FirstDayOfWeek = (System.Windows.Forms.Day)DayOfWeek.Monday;
+            // restriccion de fechas pasadas
+            calendar_picker.MinDate = DateTime.Today;
+            if (SesionUsuario.UsuarioLogueado != null)
+            {
+                lbl_welcome.Text = $"HOLA {SesionUsuario.UsuarioLogueado.Nombre.ToUpper()}, BIENVENIDO";
+            }
+            await MarcarDiasOcupados();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        // ESTE EVENTO SOLO VALIDA, NO CAMBIA DE VENTANA
+        private void calendar_picker_DateSelected(object sender, DateRangeEventArgs e)
         {
+            if (e.Start.DayOfWeek == DayOfWeek.Sunday)
+            {
+                MessageBox.Show("No se pueden programar reuniones los domingos. Por favor, seleccione otro día.",
+                    "Día no laboral", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                // Resetear la selección para que no se quede en domingo
+                if (DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
+                    calendar_picker.SetDate(DateTime.Today.AddDays(1));
+                else
+                    calendar_picker.SetDate(DateTime.Today);
+            }
         }
 
         private void btn_seleccionar_dia_Click(object sender, EventArgs e)
         {
-            // Capturamos el día exacto que el usuario tiene clickeado en el calendario
-            DateTime diaSeleccionado = calendar_picker.SelectionStart;
-
-            // Instanciamos la siguiente pantalla pasándole la fecha como parámetro
-            FrmAgregarReuLider frmAgregar = new FrmAgregarReuLider(diaSeleccionado);
-            frmAgregar.Show();
-
-            // Ocultamos esta pantalla de selección de día
-            this.Hide();
+            
         }
-
 
         private async Task MarcarDiasOcupados()
         {
             try
             {
-                // Traemos todas las reuniones de la base de datos
                 var reuniones = await _context.Reuniones.Find(_ => true).ToListAsync();
-
-                // Extraemos solo la fecha (sin la hora) de cada reunión y quitamos los duplicados 
-                // para que no marque el mismo día dos veces si tiene varias reuniones
                 DateTime[] diasConReunion = reuniones
                     .Select(r => r.FechaInicio.Date)
                     .Distinct()
                     .ToArray();
 
-                // Le decimos al calendario que ponga en NEGRITA esos días
                 calendar_picker.BoldedDates = diasConReunion;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Hubo un problema al cargar los días ocupados: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-        }
-
-        private async void FrmCrearReuLider_Load(object sender, EventArgs e)
-        {
-            // 1. RESTRICCIÓN DE DÍAS PASADOS:
-            // Al asignar MinDate al día de hoy, el calendario bloquea automáticamente 
-            // el clic en días de ayer o meses anteriores.
-            calendar_picker.MinDate = DateTime.Today;
-
-            // 2. Personalización del Label con el nombre del usuario logueado
-            if (SesionUsuario.UsuarioLogueado != null)
-            {
-                // Asumo que tu label se llama label1, cámbialo si le pusiste otro nombre
-                lbl_welcome.Text = $"HOLA {SesionUsuario.UsuarioLogueado.Nombre.ToUpper()}, BIENVENIDO";
-            }
-
-            // 3. Buscar y marcar los días que ya tienen reuniones en la base de datos
-            await MarcarDiasOcupados();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -98,45 +79,39 @@ namespace ProgramAppointments
             this.Hide();
         }
 
-        private void btnSeleccionarDia_Click(object sender, EventArgs e)
-        {
-            // Capturamos el día exacto que el usuario tiene clickeado en el calendario
-            DateTime diaSeleccionado = calendar_picker.SelectionStart;
-            // Instanciamos la siguiente pantalla pasándole la fecha como parámetro
-            FrmAgregarReuLider frmAgregar = new FrmAgregarReuLider(diaSeleccionado);
-            frmAgregar.Show();
-            this.Hide();
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Deseas Cerrar Sesión?", "MEETLY", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                // Limpiamos la sesión del usuario
                 SesionUsuario.UsuarioLogueado = null;
-                // Volvemos al formulario de login
                 Form1 login = new Form1();
                 login.Show();
-                // Cerramos el formulario actual
                 this.Close();
             }
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        private void btnSeleccionarDia_Click(object sender, EventArgs e)
         {
+            // Obtenemos la fecha que el usuario dejó marcada en el calendario
+            DateTime diaSeleccionado = calendar_picker.SelectionStart;
 
+            // Validación de seguridad final
+            if (diaSeleccionado.DayOfWeek == DayOfWeek.Sunday)
+            {
+                MessageBox.Show("Por favor, seleccione un día válido (lunes a sábado) antes de continuar.",
+                    "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            try
+            {
+                FrmAgregarReuLider frmAgregar = new FrmAgregarReuLider(diaSeleccionado);
+                frmAgregar.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir el formulario de registro: " + ex.Message);
+            }
         }
     }
 }
-    
