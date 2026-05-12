@@ -27,5 +27,7 @@ namespace ProgramAppointments.Domain
 
         [BsonElement("participantes_ids")]
         public List<int> ParticipantesIds { get; set; } = new List<int>();
+
+        public string Estado { get; set; } = "Programada"; // "Programada" por defecto
     }
 }

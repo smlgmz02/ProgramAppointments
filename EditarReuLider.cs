@@ -18,6 +18,9 @@ namespace ProgramAppointments
         private List<Usuario> _investigadoresDisponibles;
         private List<Usuario> _investigadoresVinculados;
 
+        // Variable para manejar el estado antes de guardar en Base de Datos
+        private string _estadoTemporal;
+
         public EditarReuLider()
         {
             InitializeComponent();
@@ -31,12 +34,15 @@ namespace ProgramAppointments
 
             _investigadoresDisponibles = new List<Usuario>();
             _investigadoresVinculados = new List<Usuario>();
+
+            // Asignamos el estado actual al abrir la ventana
+            _estadoTemporal = string.IsNullOrEmpty(_reunionActual.Estado) ? "Programada" : _reunionActual.Estado;
         }
 
         private async void EditarReuLider_Load(object sender, EventArgs e)
         {
-            // 1. VALIDACIÓN DE REUNIÓN FINALIZADA
-            if (_reunionActual.FechaFin.ToLocalTime() < DateTime.Now)
+            // Esta validación por si acaso se cuela una reunión finalizada
+            if (_estadoTemporal == "Finalizada" || _reunionActual.FechaFin.ToLocalTime() < DateTime.Now)
             {
                 MessageBox.Show("Esta reunión ya finalizó y no puede ser editada.",
                     "Reunión Finalizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -45,11 +51,9 @@ namespace ProgramAppointments
                 return;
             }
 
-            // 2. Configuración visual
             calendar_fecha.FirstDayOfWeek = (System.Windows.Forms.Day)DayOfWeek.Monday;
             calendar_fecha.MinDate = DateTime.Today;
 
-            // 3. Cargar datos de la reunión
             DateTime fechaInicioLocal = _reunionActual.FechaInicio.ToLocalTime();
             calendar_fecha.SelectionStart = fechaInicioLocal.Date;
             calendar_fecha.SelectionEnd = fechaInicioLocal.Date;
@@ -59,11 +63,9 @@ namespace ProgramAppointments
             txtHoraInicio.Text = fechaInicioLocal.ToString("HH:mm");
             txtHoraFinal.Text = _reunionActual.FechaFin.ToLocalTime().ToString("HH:mm");
 
-            // 4. Suscribir eventos para refrescar disponibilidad automáticamente
             txtHoraInicio.KeyPress += ValidarEntradaHora;
             txtHoraFinal.KeyPress += ValidarEntradaHora;
 
-            // Refrescar cuando el usuario termine de editar la hora o cambie la fecha
             txtHoraInicio.Leave += async (s, ev) => await CargarListasUsuarios();
             txtHoraFinal.Leave += async (s, ev) => await CargarListasUsuarios();
 
@@ -72,7 +74,6 @@ namespace ProgramAppointments
 
         private async Task CargarListasUsuarios()
         {
-            // Intentamos obtener las horas actuales para el filtro de disponibilidad
             if (!IntentarParsearHoras(out DateTime inicioUtc, out DateTime finUtc))
             {
                 inicioUtc = _reunionActual.FechaInicio;
@@ -83,7 +84,6 @@ namespace ProgramAppointments
                 .Find(u => u.Rol == "Investigador")
                 .ToListAsync();
 
-            // Filtro de cruce de horarios en MongoDB (Excluyendo la reunión actual)
             var filtroConflictos = Builders<Reunion>.Filter.And(
                 Builders<Reunion>.Filter.Ne(r => r.IdMongo, _reunionActual.IdMongo),
                 Builders<Reunion>.Filter.Lt(r => r.FechaInicio, finUtc),
@@ -93,9 +93,6 @@ namespace ProgramAppointments
             var reunionesConflictivas = await _context.Reuniones.Find(filtroConflictos).ToListAsync();
             var idsOcupados = reunionesConflictivas.SelectMany(r => r.ParticipantesIds).Distinct().ToList();
 
-            // Sincronizar listas:
-            // Vinculados: Los que ya están en la lista temporal de vinculados
-            // (Al cargar por primera vez, se usa la data de la reunión)
             if (_investigadoresVinculados.Count == 0 && _reunionActual.ParticipantesIds.Count > 0)
             {
                 _investigadoresVinculados = todosLosInvestigadores
@@ -103,7 +100,6 @@ namespace ProgramAppointments
                    .ToList();
             }
 
-            // Disponibles: Investigadores que NO están vinculados Y que NO están ocupados en ese horario
             var idsVinculadosActuales = _investigadoresVinculados.Select(v => v.IdUsuario).ToList();
             _investigadoresDisponibles = todosLosInvestigadores
                 .Where(u => !idsVinculadosActuales.Contains(u.IdUsuario) && !idsOcupados.Contains(u.IdUsuario))
@@ -137,8 +133,6 @@ namespace ProgramAppointments
         {
             if (combobox_investig_vinculados.SelectedItem is Usuario seleccionado)
             {
-                // Al desvincular, solo volverá a "disponibles" si no tiene cruce de horario
-                // Por simplicidad, movemos y luego refrescamos la disponibilidad total
                 _investigadoresVinculados.Remove(seleccionado);
                 _investigadoresDisponibles.Add(seleccionado);
                 ActualizarComboboxes();
@@ -168,7 +162,6 @@ namespace ProgramAppointments
         {
             inicio = DateTime.MinValue; fin = DateTime.MinValue;
 
-            // Cambiamos a TimeSpanStyles.None
             if (!TimeSpan.TryParseExact(txtHoraInicio.Text, @"hh\:mm", null, System.Globalization.TimeSpanStyles.None, out TimeSpan hInicio) ||
                 !TimeSpan.TryParseExact(txtHoraFinal.Text, @"hh\:mm", null, System.Globalization.TimeSpanStyles.None, out TimeSpan hFin))
             {
@@ -202,12 +195,14 @@ namespace ProgramAppointments
                 return;
             }
 
+            // AÑADIMOS EL ESTADO EN EL UPDATE PARA MONGODB
             var updateDef = Builders<Reunion>.Update
                 .Set(r => r.Nombre, txtnombrereu.Text)
                 .Set(r => r.Motivo, txtmotivoreu.Text)
                 .Set(r => r.FechaInicio, inicioUtc)
                 .Set(r => r.FechaFin, finUtc)
-                .Set(r => r.ParticipantesIds, _investigadoresVinculados.Select(i => i.IdUsuario).ToList());
+                .Set(r => r.ParticipantesIds, _investigadoresVinculados.Select(i => i.IdUsuario).ToList())
+                .Set(r => r.Estado, _estadoTemporal);
 
             await _context.Reuniones.UpdateOneAsync(r => r.IdMongo == _reunionActual.IdMongo, updateDef);
 
@@ -222,9 +217,25 @@ namespace ProgramAppointments
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Estás seguro de que deseas cancelar la edición? Se perderán los cambios no guardados.", "Confirmar Cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Estás seguro de que deseas cancelar la edición? Se perderán los cambios no guardados.", "Confirmar Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        // LÓGICA DE CANCELAR REUNIÓN
+        private void btn_cancelar_reunion_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show(
+                "¿Seguro que quiere cancelar esta reunión? Esta cancelación será permanente al guardar los cambios y no podrá ser reversible.",
+                "Confirmación de Cancelación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (dialog == DialogResult.Yes)
+            {
+                _estadoTemporal = "Cancelada";
+                MessageBox.Show("El estado se ha cambiado a 'Cancelada'. Por favor, presione 'Guardar Cambios' para hacer esta acción permanente en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

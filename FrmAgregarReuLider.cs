@@ -56,7 +56,6 @@ namespace ProgramAppointments
             txtHoraInicio.KeyPress += ValidarEntradaHora;
             txtHoraFinal.KeyPress += ValidarEntradaHora;
 
-            // eventos para validación en tiempo real
             txtHoraInicio.TextChanged += Horas_TextChanged;
             txtHoraFinal.TextChanged += Horas_TextChanged;
         }
@@ -73,15 +72,12 @@ namespace ProgramAppointments
 
         private void Horas_TextChanged(object sender, EventArgs e)
         {
-            // solo se refresca el combo si ambos campos tienen la longitud completa (ej. 08:30)
             if (txtHoraInicio.Text.Length == 5 && txtHoraFinal.Text.Length == 5)
             {
                 ActualizarComboBox();
             }
             else
             {
-                // si el usuario está borrando o editando, mostramos la lista completa de disponibles
-                // para evitar que el combo se quede vacío mientras escribe
                 ActualizarComboBox();
             }
         }
@@ -124,7 +120,6 @@ namespace ProgramAppointments
 
             var listaAMostrar = _investigadoresDisponibles.ToList();
 
-            // solo filtramos si hay 5 caracteres en ambos para evitar que el combo se quede vacío mientras el usuario escribe
             if (txtHoraInicio.Text.Length == 5 && txtHoraFinal.Text.Length == 5)
             {
                 if (IntentarParsearHorasSilencioso(out DateTime inicioProp, out DateTime finProp))
@@ -132,18 +127,15 @@ namespace ProgramAppointments
                     var inicioUtc = inicioProp.ToUniversalTime();
                     var finUtc = finProp.ToUniversalTime();
 
-                    // solo quita al investigador si la hora coincide exactamente
                     var reunionesConflictivas = _reunionesCargadas.Where(r =>
                         r.FechaInicio == inicioUtc && r.FechaFin == finUtc
                     ).ToList();
 
                     var idsOcupados = reunionesConflictivas.SelectMany(r => r.ParticipantesIds).Distinct().ToList();
-
                     listaAMostrar = listaAMostrar.Where(inv => !idsOcupados.Contains(inv.IdUsuario)).ToList();
                 }
             }
 
-            // tambien quitamos a los que ya fueron agregados a la lista actual de la reunión
             var idsYaAgregados = _participantesAgregados.Select(p => p.IdUsuario).ToList();
             listaAMostrar = listaAMostrar.Where(inv => !idsYaAgregados.Contains(inv.IdUsuario)).ToList();
 
@@ -195,7 +187,6 @@ namespace ProgramAppointments
 
             if (!ParsearHoras(out DateTime inicioProp, out DateTime finProp)) return;
 
-            // Validación robusta contra MongoDB (detecta cualquier cruce)
             var builder = Builders<Reunion>.Filter;
             var filtro = builder.And(
                 builder.AnyEq(r => r.ParticipantesIds, inv.IdUsuario),
@@ -237,7 +228,8 @@ namespace ProgramAppointments
                 Motivo = txtmotivoreu.Text,
                 FechaInicio = inicio.ToUniversalTime(),
                 FechaFin = fin.ToUniversalTime(),
-                ParticipantesIds = _participantesAgregados.Select(p => p.IdUsuario).ToList()
+                ParticipantesIds = _participantesAgregados.Select(p => p.IdUsuario).ToList(),
+                Estado = "Programada" // ESTADO AUTOMÁTICO AL CREAR
             };
 
             await _context.Reuniones.InsertOneAsync(nueva);
@@ -285,6 +277,12 @@ namespace ProgramAppointments
             this.Close();
         }
 
+        private void txtMes_TextChanged(object sender, EventArgs e) { }
+        private void txtDia_TextChanged(object sender, EventArgs e) { }
+        private void txtHoraInicio_TextChanged(object sender, EventArgs e) { }
+        private void txtHoraFinal_TextChanged(object sender, EventArgs e) { }
+        private void combo_investigadores_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void txtnombrereu_TextChanged(object sender, EventArgs e) { }
         private void label6_Click(object sender, EventArgs e) { }
         private void datagrid_reuniones_CellContentClick_1(object sender, DataGridViewCellEventArgs e) { }
         private void txtHoraInicio_TextChanged_1(object sender, EventArgs e) { }
